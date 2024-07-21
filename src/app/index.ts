@@ -17,7 +17,7 @@ export async function initServer() {
     app.use(bodyParser.json())
 
     app.use("/",(req,res)=>{
-        res.send(200).json({message:"Everything is good"})
+        res.sendStatus(200).json({message:"Everything is good"})
     })
 
     const graphqlServer = new ApolloServer<GraphqlContext>({ 
