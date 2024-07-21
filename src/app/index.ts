@@ -16,7 +16,7 @@ export async function initServer() {
     app.use(cors())
     app.use(bodyParser.json())
 
-    app.use("/",(req,res)=>{
+    app.get("/",(req,res)=>{
         res.sendStatus(200).json({message:"Everything is good"})
     })
 
