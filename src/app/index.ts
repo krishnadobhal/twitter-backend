@@ -10,10 +10,15 @@ import {Tweet} from "./tweet";
 
 
 
+
 export async function initServer() {
     const app=express();
     app.use(cors())
     app.use(bodyParser.json())
+
+    app.use("/",(req,res)=>{
+        res.send(200).json({message:"Everything is good"})
+    })
 
     const graphqlServer = new ApolloServer<GraphqlContext>({ 
         typeDefs:`
